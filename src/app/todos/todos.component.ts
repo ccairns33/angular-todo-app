@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Todo } from '../models/todo.model';
 import { DataService } from '../services/data.service';
 
@@ -20,7 +21,9 @@ export class TodosComponent implements OnInit {
     this.todos = this.dataService.getAllTodos()
   }
 
-  onFormSubmit(){
-    console.log("form submitted")
+  onFormSubmit(form: NgForm){
+    console.log(form.value.text)
+
+    this.dataService.addTodo( new Todo(form.value.text))
   }
 }
