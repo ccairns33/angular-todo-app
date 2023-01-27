@@ -23,12 +23,14 @@
 <section>
     <div class="container">
         <div class="todos-list">
-            <div class="todo-item completed">
+            <!-- looping through todos in todos component class -->
+            <div class="todo-item" *ngFor="let todo of todos" [class.completed]="todo.completed">
                 <div class="check-box">
                     <i class="material-icons">check</i>
                 </div>
                 <div class="todo-text">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem, debitis. Expedita laboriosam, non quaerat vitae esse voluptates soluta officiis quod ipsa. Architecto odio illum ab illo, magnam magni voluptates exercitationem.
+                    <!-- this todo is from ngFor -->
+                    {{ todo.text }}
                 </div>
                 <div class="todo-controls-box">
                     <div class="todo-control-button">
@@ -40,22 +42,6 @@
                 </div>
             </div>
 
-            <div class="todo-item">
-                <div class="check-box">
-                    <i class="material-icons">check</i>
-                </div>
-                <div class="todo-text">
-                    One line of text
-                </div>
-                <div class="todo-controls-box">
-                    <div class="todo-control-button">
-                        <i class="material-icons">edit</i>
-                    </div>
-                    <div class="todo-control-button is-danger">
-                        <i class="material-icons">delete</i>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </section>
