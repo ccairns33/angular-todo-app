@@ -7,7 +7,12 @@ import { Todo } from '../models/todo.model';
 })
 export class DataService {
 
-  todos: Todo[] =[];
+  todos: Todo[] =[
+    new Todo("This is a test with no completed"),
+    new Todo("This is a second test with no completed"),
+    new Todo("Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem, debitis. Expedita laboriosam, non quaerat vitae esse voluptates soluta officiis quod ipsa. Architecto odio illum ab illo, magnam magni voluptates exercitationem.")
+
+  ];
 
   constructor() { }
 
