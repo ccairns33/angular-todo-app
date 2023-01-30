@@ -10,6 +10,7 @@ import { DataService } from '../services/data.service';
 })
 export class TodosComponent implements OnInit {
   todos: Todo[] = [];
+  showValidationErrors: boolean = false;
 
   constructor(private dataService: DataService){
 
@@ -23,7 +24,8 @@ export class TodosComponent implements OnInit {
 
   onFormSubmit(form: NgForm){
     console.log(form.value.text)
-
+    if (form.invalid) return this.showValidationErrors = true;
     this.dataService.addTodo( new Todo(form.value.text))
+    return false
   }
 }
