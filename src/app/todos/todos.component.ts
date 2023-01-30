@@ -23,9 +23,12 @@ export class TodosComponent implements OnInit {
   }
 
   onFormSubmit(form: NgForm){
-    console.log(form.value.text)
     if (form.invalid) return this.showValidationErrors = true;
     this.dataService.addTodo( new Todo(form.value.text))
+
+    // removes text from input and removes validation errors
+    this.showValidationErrors = false;
+    form.reset(); 
     return false
   }
 }
