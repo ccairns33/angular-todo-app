@@ -9,11 +9,17 @@ import { Todo } from '../models/todo.model';
 export class TodoItemComponent implements OnInit{
 
   @Input() todo: Todo;
+
+ 
   constructor(){
 
   }
 
   ngOnInit(): void {
     
+  }
+
+  onTodoClicked(){
+    console.log("todo was clicked")
   }
 }
